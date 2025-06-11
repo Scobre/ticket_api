@@ -1,0 +1,10 @@
+__pycache__/
+
+.coverage
+
+.env
+.venv/
+
+*.db
+
+.DS_Store

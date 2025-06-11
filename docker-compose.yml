@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  web:
+    build: .
+    env_file:
+      - .env
+      - version
+    ports:
+      - "8000:8000"
+    user: "api_user:api_user"
+    volumes:
+      - ./app:/api_user/code/app

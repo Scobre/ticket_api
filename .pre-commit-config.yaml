@@ -1,0 +1,43 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-ast
+    -   id: check-executables-have-shebangs
+    -   id: check-merge-conflict
+    -   id: check-shebang-scripts-are-executable
+    -   id: end-of-file-fixer
+    -   id: requirements-txt-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+    -   id: python-no-eval
+    -   id: python-no-log-warn
+    -   id: python-use-type-annotations
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+    -   id: isort
+        args: ["--profile", "black", "--filter-files"]
+-   repo: https://github.com/psf/black
+    rev: 24.2.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.0
+    hooks:
+    -   id: autoflake
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
+    hooks:
+    -   id: pyupgrade
+- repo: local
+  hooks:
+    - id: check-requirements
+      name: check-requirements
+      entry: ./check_requirements.sh
+      language: system
+      pass_filenames: false
+      always_run: true
